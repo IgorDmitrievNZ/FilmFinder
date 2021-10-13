@@ -1,4 +1,4 @@
-package com.example.android.filmfinder.ui.main
+package com.example.android.filmfinder.ui.list
 
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.LiveData
@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 import com.example.android.filmfinder.AppState
 import com.example.android.filmfinder.model.repository.Repository
 
-class MainViewModel(private val repository: Repository) : ViewModel(), LifecycleObserver {
+class MovieListViewModel(private val repository: Repository) : ViewModel(), LifecycleObserver {
 
     private val liveData = MutableLiveData<AppState>()
 
