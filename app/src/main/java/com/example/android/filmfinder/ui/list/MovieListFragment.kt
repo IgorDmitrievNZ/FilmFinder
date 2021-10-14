@@ -5,13 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.android.filmfinder.AppState
 import com.example.android.filmfinder.R
 import com.example.android.filmfinder.databinding.FragmentRecyclerListBinding
+import com.example.android.filmfinder.extensions.showSnackBar
 import com.example.android.filmfinder.model.entities.MovieFinder
 import com.example.android.filmfinder.ui.details.DetailsFragment
-import com.google.android.material.snackbar.Snackbar
-
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MovieListFragment : Fragment() {
@@ -61,20 +61,16 @@ class MovieListFragment : Fragment() {
                     setMovie(appState.movieData)
                 }
                 moviesListRecycler.adapter = adapter
+                moviesListRecycler.layoutManager = GridLayoutManager(requireContext(), 2)
             }
             is AppState.Loading -> {
                 progressBar.visibility = View.VISIBLE
             }
             is AppState.Error -> {
                 progressBar.visibility = View.GONE
-                Snackbar
-                    .make(
-                        binding.progressBar,
-                        getString(R.string.error),
-                        Snackbar.LENGTH_INDEFINITE
-                    )
-                    .setAction(getString(R.string.reload)) { viewModel.getMovieFromLocalSource() }
-                    .show()
+                progressBar.showSnackBar(getString(R.string.error), getString(R.string.reload)) {
+                    viewModel.getMovieFromLocalSource()
+                }
             }
         }
     }
