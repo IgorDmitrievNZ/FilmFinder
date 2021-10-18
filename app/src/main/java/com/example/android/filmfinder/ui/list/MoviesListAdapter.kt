@@ -1,24 +1,44 @@
 package com.example.android.filmfinder.ui.list
 
+import android.annotation.SuppressLint
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.android.filmfinder.databinding.ItemFilmListBinding
+import com.example.android.filmfinder.model.entities.MovieFinder
 
-class MoviesListAdapter : RecyclerView.Adapter<MoviesListAdapter.MoviesListViewHolder>() {
+class MoviesListAdapter(private val itemClickListener: MovieListFragment.OnItemViewClickListener) :
+    RecyclerView.Adapter<MoviesListAdapter.MoviesListViewHolder>() {
+
+    private var movieData: List<MovieFinder> = listOf()
+    private lateinit var binding: ItemFilmListBinding
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun setMovie(data: List<MovieFinder>) {
+        movieData = data
+        notifyDataSetChanged()
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MoviesListViewHolder {
-        TODO("Not yet implemented")
+        binding = ItemFilmListBinding.inflate(
+            LayoutInflater.from(parent.context), parent, false
+        )
+        return MoviesListViewHolder(binding.root)
     }
 
     override fun onBindViewHolder(holder: MoviesListViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        holder.bind(movieData[position])
     }
 
-    override fun getItemCount(): Int {
-        TODO("Not yet implemented")
-    }
+    override fun getItemCount() = movieData.size
 
-    inner class MoviesListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
+    inner class MoviesListViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        fun bind(findMovie: MovieFinder) = with(binding) {
+            movieTitle.text = findMovie.movie.title
+            movieRating.text = findMovie.movie.rating.toString()
+            movieYear.text = findMovie.movie.yearProduce.toString()
+            root.setOnClickListener { itemClickListener.onItemViewClick(findMovie) }
+        }
     }
 }

@@ -13,7 +13,7 @@ class MovieListViewModel(private val repository: Repository) : ViewModel(), Life
 
     fun getLiveData(): LiveData<AppState> = liveData
 
-    fun getMovie() = getDataFromLocalSource()
+    fun getMovieFromLocalSource() = getDataFromLocalSource()
 
     private fun getDataFromLocalSource() {
         liveData.value = AppState.Loading
