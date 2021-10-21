@@ -5,34 +5,17 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Film(
-    val title: String,
-    val yearProduce: Int,
-    val rating: Double = 0.0,
+    val id: String,
     val poster: String
 ) : Parcelable
 
 fun getDefaultMovie() = Film(
-    "Squid Game",
-    2021,
-    5.5,
+    "tt1375666",
     "https://images.freeimages.com/images/large-previews/241/night-fog-1521028.jpg"
 )
 
 fun getTopMovies() = listOf(
-    MovieFinder(Film("Avatar", 2009, 7.5, "poster"), "Amazing description"),
-    MovieFinder(Film("Cricket", 2057, 9.9, "poster"), "Future movie"),
-    MovieFinder(Film("Forest Gump", 1994, 8.5, "poster"), "Run forest run!"),
-    MovieFinder(Film("Mentы", 2002, 1.4, "poster"), "rubbish"),
-    MovieFinder(Film("Avatar", 2009, 7.5, "poster"), "Amazing description"),
-    MovieFinder(Film("Cricket", 2057, 9.9, "poster"), "Future movie"),
-    MovieFinder(Film("Forest Gump", 1994, 8.5, "poster"), "Run forest run!"),
-    MovieFinder(Film("Mentы", 2002, 1.4, "poster"), "rubbish"),
-    MovieFinder(Film("Avatar", 2009, 7.5, "poster"), "Amazing description"),
-    MovieFinder(Film("Cricket", 2057, 9.9, "poster"), "Future movie"),
-    MovieFinder(Film("Forest Gump", 1994, 8.5, "poster"), "Run forest run!"),
-    MovieFinder(Film("Mentы", 2002, 1.4, "poster"), "rubbish"),
-    MovieFinder(Film("Avatar", 2009, 7.5, "poster"), "Amazing description"),
-    MovieFinder(Film("Cricket", 2057, 9.9, "poster"), "Future movie"),
-    MovieFinder(Film("Forest Gump", 1994, 8.5, "poster"), "Run forest run!"),
-    MovieFinder(Film("Mentы", 2002, 1.4, "poster"), "rubbish")
+    MovieFinder(Film("tt1375666", "poster"), "Inception", 2010, 8.8, "description"),
+    MovieFinder(Film("tt0109830", "poster"), "Forrest Gump", 1994, 8.8, "description")
+
 )
