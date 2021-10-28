@@ -35,9 +35,9 @@ class MoviesListAdapter(private val itemClickListener: MovieListFragment.OnItemV
 
     inner class MoviesListViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         fun bind(findMovie: MovieFinder) = with(binding) {
-            movieTitle.text = findMovie.movie.title
-            movieRating.text = findMovie.movie.rating.toString()
-            movieYear.text = findMovie.movie.yearProduce.toString()
+            movieTitle.text = findMovie.title
+            movieRating.text = findMovie.rating.toString()
+            movieYear.text = findMovie.year.toString()
             root.setOnClickListener { itemClickListener.onItemViewClick(findMovie) }
         }
     }
