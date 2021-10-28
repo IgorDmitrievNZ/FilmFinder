@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.example.android.filmfinder.databinding.ItemFilmListBinding
 import com.example.android.filmfinder.model.entities.MovieFinder
 
@@ -38,6 +39,7 @@ class MoviesListAdapter(private val itemClickListener: MovieListFragment.OnItemV
             movieTitle.text = findMovie.title
             movieRating.text = findMovie.rating.toString()
             movieYear.text = findMovie.year.toString()
+            movieImage.load(findMovie.poster)
             root.setOnClickListener { itemClickListener.onItemViewClick(findMovie) }
         }
     }

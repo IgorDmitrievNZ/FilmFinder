@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import coil.load
 import com.example.android.filmfinder.AppState
 import com.example.android.filmfinder.databinding.DetailsFragmentBinding
 import com.example.android.filmfinder.model.entities.MovieFinder
@@ -53,6 +54,7 @@ class DetailsFragment : Fragment() {
                             movieYear.text = appState.movieData[0].year.toString()
                             movieRating.text = appState.movieData[0].rating.toString()
                             moviePlot.text = appState.movieData[0].plot
+                            movieImage.load(appState.movieData[0].poster)
                         }
                     }
                 })
