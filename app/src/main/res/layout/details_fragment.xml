@@ -12,9 +12,8 @@
     <ImageView
         android:id="@+id/movie_image"
         android:layout_width="0dp"
-        android:layout_height="300dp"
+        android:layout_height="400dp"
         android:layout_margin="@dimen/margin_5dp"
-        android:scaleType="fitXY"
         android:src="@drawable/squid_game"
         app:layout_constraintBottom_toTopOf="@+id/movie_title"
         app:layout_constraintEnd_toEndOf="parent"

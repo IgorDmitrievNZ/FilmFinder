@@ -9,6 +9,7 @@ data class MovieFinder(
     val title: String? = "No title",
     val year: Int,
     val rating: Double = 0.0,
+    val poster: String? = "no image",
     val plot: String? = "This is a description of the movie"
 ) : Parcelable
 
