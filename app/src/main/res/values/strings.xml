@@ -4,4 +4,7 @@
     <string name="error">Error</string>
     <string name="reload">Reload</string>
     <string name="error_hapened">Server Error</string>
+    <string name="search">search</string>
+    <string name="settings">settings</string>
+    <string name="adult_content">Show content for adults</string>
 </resources>
