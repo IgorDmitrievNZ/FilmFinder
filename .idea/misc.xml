@@ -5,6 +5,7 @@
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.23489583333333333" />
         <entry key="app/src/main/res/layout/details_fragment.xml" value="0.21979166666666666" />
+        <entry key="app/src/main/res/layout/fragment_contacts.xml" value="0.358974358974359" />
         <entry key="app/src/main/res/layout/fragment_list.xml" value="0.37395833333333334" />
         <entry key="app/src/main/res/layout/fragment_movies_list.xml" value="0.21979166666666666" />
         <entry key="app/src/main/res/layout/fragment_recycler_list.xml" value="0.21979166666666666" />

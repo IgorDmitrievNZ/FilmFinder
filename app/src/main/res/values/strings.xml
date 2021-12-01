@@ -7,4 +7,7 @@
     <string name="search">search</string>
     <string name="settings">settings</string>
     <string name="adult_content">Show content for adults</string>
+    <string name="contacts">Contacts</string>
+    <string name="permission_to_read_contacts">Need permission to read contacts</string>
+    <string name="share">Share</string>
 </resources>

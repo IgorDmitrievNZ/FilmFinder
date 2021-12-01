@@ -5,6 +5,7 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.android.filmfinder.ui.contacts.ContactsFragment
 import com.example.android.filmfinder.ui.list.MovieListFragment
 import com.example.android.filmfinder.ui.settings.SettingsFragment
 
@@ -29,6 +30,10 @@ class MainActivity : AppCompatActivity() {
         return when (item.itemId) {
             R.id.menu_settings -> {
                 openFragment(SettingsFragment.newInstance())
+                true
+            }
+            R.id.menu_contacts -> {
+                openFragment(ContactsFragment.newInstance())
                 true
             }
             else -> super.onOptionsItemSelected(item)
