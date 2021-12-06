@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.android.filmfinder.ui.contacts.ContactsFragment
 import com.example.android.filmfinder.ui.list.MovieListFragment
+import com.example.android.filmfinder.ui.maps.MapsFragment
 import com.example.android.filmfinder.ui.settings.SettingsFragment
 
 class MainActivity : AppCompatActivity() {
@@ -34,6 +35,10 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.menu_contacts -> {
                 openFragment(ContactsFragment.newInstance())
+                true
+            }
+            R.id.menu_google_maps -> {
+                openFragment(MapsFragment.newInstance())
                 true
             }
             else -> super.onOptionsItemSelected(item)
