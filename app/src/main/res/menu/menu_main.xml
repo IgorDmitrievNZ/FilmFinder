@@ -8,8 +8,19 @@
         app:showAsAction="ifRoom" />
 
     <item
+        android:id="@+id/menu_contacts"
+        android:icon="@drawable/ic_contacts_24"
+        android:title="@string/contacts"
+        app:showAsAction="ifRoom" />
+
+    <item
         android:id="@+id/menu_settings"
         android:title="@string/settings"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menu_google_maps"
+        android:title="@string/map"
         app:showAsAction="never" />
 
 </menu>
