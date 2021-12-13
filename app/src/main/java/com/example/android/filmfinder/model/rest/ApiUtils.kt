@@ -1,5 +1,6 @@
 package com.example.android.filmfinder.model.rest
 
+import com.example.android.filmfinder.BuildConfig
 import okhttp3.OkHttpClient
 import java.util.concurrent.TimeUnit
 
@@ -16,7 +17,7 @@ object ApiUtils {
         httpClient.addInterceptor { chain ->
             val original = chain.request()
             val request = original.newBuilder()
-                .header("x-rapidapi-key", "*************************************")
+                .header("x-rapidapi-key", BuildConfig.MOVIES_API_KEY)
                 .method(original.method(), original.body())
                 .build()
 
