@@ -19,10 +19,25 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    buildTypes.each {
+        Properties properties = new Properties()
+        properties.load(project.rootProject.file("local.properties").newDataInputStream())
+        def apiKey  = properties.getProperty("movies_api_key", "")
+        it.buildConfigField "String", "MOVIES_API_KEY", apiKey
+    }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        beta {
+            initWith debug
+            versionNameSuffix "-beta"
+            applicationIdSuffix ".beta"
+        }
+        debug {
+            versionNameSuffix "-debug"
         }
     }
     compileOptions {
